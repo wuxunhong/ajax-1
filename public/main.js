@@ -1,7 +1,7 @@
 let n = 1;
 getPage.onclick = () => {
   const request = new XMLHttpRequest();
-  request.open("GET", `/page${n+1}`);
+  request.open("GET", `/page${n + 1}`);
   request.onreadystatechange = () => {
     if (request.readyState === 4 && request.status === 200) {
       const array = JSON.parse(request.response);
@@ -10,7 +10,7 @@ getPage.onclick = () => {
         li.textContent = item.id;
         xxx.appendChild(li);
       });
-      n+=1
+      n += 1
     }
   };
   request.send();
@@ -43,7 +43,7 @@ getXML.onclick = () => {
 };
 getHTML.onclick = () => {
   const request = new XMLHttpRequest();
-  request.open("GET", "/3.htm");
+  request.open("GET", "/3.html");
   request.onload = () => {
     // 创建 div 标签
     const div = document.createElement("div");
@@ -52,7 +52,7 @@ getHTML.onclick = () => {
     // 插入到身体里
     document.body.appendChild(div);
   };
-  request.onerror = () => {};
+  request.onerror = () => { };
   request.send();
 };
 getJS.onclick = () => {
@@ -66,7 +66,7 @@ getJS.onclick = () => {
     // 插到身体里
     document.body.appendChild(script);
   };
-  request.onerror = () => {};
+  request.onerror = () => { };
   request.send();
 };
 
